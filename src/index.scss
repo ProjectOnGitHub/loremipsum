@@ -31,7 +31,6 @@
   align-items: center;
   position: sticky;
   top: 0;
-
   &__container {
     padding: 0 20px;
     box-sizing: border-box;
@@ -55,6 +54,9 @@
   }
   &__menu {
     @include flexible(100%);
+    font-weight: 600;
+    line-height: 1.2;
+    font-size: 13px;
     gap: 60px;
     flex-flow: row nowrap;
     @include unmarkedList(0, 0);
