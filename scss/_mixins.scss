@@ -1,0 +1,27 @@
+@mixin flexible($width) {
+  display: flex;
+  width: $width;
+}
+
+@mixin gridable($width) {
+  display: grid;
+  width: $width;
+}
+
+@mixin unmarkedList($padding, $margin) {
+  list-style-type: none;
+  padding: $padding;
+  margin: $margin;
+}
+
+@mixin link($color) {
+  color: $color;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+  &:hover {
+    opacity: 0.7;
+  }
+}
