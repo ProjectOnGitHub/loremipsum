@@ -27,7 +27,9 @@
   height: 100px;
   align-items: center;
   &__container {
-    max-width: $max-width;
+    padding: 0 20px;
+    box-sizing: border-box;
+    max-width: calc($max-width + 40px);
     @include flexible(100%);
     justify-content: space-between;
     align-items: center;
