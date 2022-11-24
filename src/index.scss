@@ -10,6 +10,9 @@
   box-sizing: border-box;
   grid-template-columns: 1fr;
   justify-items: center;
+  height: 100vh;
+  background: url('/src/images/background.png') top no-repeat;
+  background-size: cover;
 }
 
 .header,
@@ -23,9 +26,12 @@
 }
 
 .header {
-  background-color: $color-header-bg;
+  background-color: rgba($color-header-bg, 0.9);
   height: 100px;
   align-items: center;
+  position: sticky;
+  top: 0;
+
   &__container {
     padding: 0 20px;
     box-sizing: border-box;
