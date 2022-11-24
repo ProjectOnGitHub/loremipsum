@@ -1,0 +1,60 @@
+@import '../scss/mixins';
+@import '../scss/variables';
+
+.root {
+  @include gridable(100%);
+  font-family: 'Lato', Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  align-items: center;
+  box-sizing: border-box;
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+
+.header,
+.main,
+.footer {
+  @include gridable(100%);
+  justify-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  grid-template-columns: 1fr;
+}
+
+.header {
+  background-color: $color-header-bg;
+  height: 100px;
+  align-items: center;
+  &__container {
+    max-width: $max-width;
+    @include flexible(100%);
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+  }
+  &__logo {
+    @include link($color-text-light);
+    color: $color-text-light;
+    font-family: 'Raleway', Arial, sans-serif;
+    font-weight: 800;
+    font-size: 28px;
+    line-height: 1.18;
+    font-style: normal;
+    &_blue {
+      color: $color-logo;
+    }
+  }
+  &__menu {
+    @include flexible(100%);
+    gap: 60px;
+    flex-flow: row nowrap;
+    @include unmarkedList(0, 0);
+    &-link {
+      @include link($color-text-light);
+      &_active {
+        color: $color-active-link;
+      }
+    }
+  }
+}
