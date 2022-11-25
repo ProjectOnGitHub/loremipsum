@@ -54,3 +54,10 @@
   text-transform: uppercase;
   color: $color-text-dark;
 }
+
+@mixin backgroundImgHeight {
+  min-height: calc($header-height + 750px);
+  @media screen and (max-width: 1024px) {
+    min-height: calc($header-height + 750px - 80px);
+  }
+}

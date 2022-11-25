@@ -6,13 +6,12 @@
   font-family: 'Lato', Arial, sans-serif;
   font-weight: 400;
   font-style: normal;
-  align-items: center;
   box-sizing: border-box;
   grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
   justify-items: center;
   height: 100vh;
-  background: url('/src/images/background.png') top no-repeat;
-  background-size: cover;
+  position: relative;
 }
 
 .scroll-lock {
@@ -31,9 +30,10 @@
 
 .header {
   background-color: rgba($color-header-bg, 0.9);
-  height: 100px;
+  height: $header-height;
   align-items: center;
   position: sticky;
+  z-index: 1;
   top: 0;
   &__container {
     @include container(space-between);
@@ -49,6 +49,9 @@
     font-size: 28px;
     line-height: 1.18;
     font-style: normal;
+    @media screen and (max-width: 576px) {
+      font-size: 26px;
+    }
     &_blue {
       color: $color-logo;
     }
@@ -115,26 +118,68 @@
     @include flexible(auto);
   }
 }
+.main {
+  position: absolute;
+  top: 0;
+  background: url('/src/images/background.png') top no-repeat;
+  background-size: cover;
+  height: 100%;
+  @include backgroundImgHeight();
+  z-index: 0;
+}
 
 .about {
+  background-size: cover;
   @include gridable(100%);
   grid-template-areas:
     'title title  '
     'article article'
     'button-order button-more';
   grid-template-columns: min-content 1fr;
-  gap: 80px 30px;
+  column-gap: 30px;
   @include container(start);
-  padding-top: 103px;
   padding-bottom: 202px;
-  height: 100%;
+  height: 100vh;
+  align-content: space-between;
+  padding-top: calc($header-height + 103px);
+  @include backgroundImgHeight();
+  @media screen and (max-width: 1024px) {
+    padding-top: calc($header-height + 103px - 40px);
+    padding-bottom: calc(202px - 40px);
+  }
+  @media screen and (max-width: 576px) {
+    row-gap: 10px;
+    justify-items: center;
+    grid-template-areas:
+      'title'
+      'article'
+      'button-order'
+      'button-more';
+    grid-template-columns: 1fr;
+    align-content: initial;
+  }
+
   &__title {
-    @include gridable(100%);
+    @include flexible(100%);
+    flex-flow: column nowrap;
     grid-area: title;
     @include title();
     font-weight: 700;
     font-size: 48px;
     height: 125px;
+    align-content: center;
+    @media screen and (max-width: 1024px) {
+      height: 100%;
+    }
+    @media screen and (max-width: 720px) {
+      font-size: 40px;
+    }
+    @media screen and (max-width: 576px) {
+      font-size: 32px;
+    }
+    @media screen and (max-width: 480px) {
+      font-size: 22px;
+    }
     &-decorate {
       color: $color-decorate;
     }
@@ -145,6 +190,9 @@
     grid-area: article;
     font-size: 20px;
     line-height: 1.2;
+    @media screen and (max-width: 576px) {
+      font-size: 16px;
+    }
   }
   &__paragraph {
     font-weight: 700;
@@ -156,7 +204,7 @@
     list-style-type: '-';
     box-sizing: border-box;
     padding: 0;
-    margin: 0;
+    margin: 0 0 0 15px;
     &-item {
       padding-left: 10px;
     }
@@ -173,6 +221,9 @@
       background-color: $color-decorate;
       border: 1px solid $color-text-light;
       color: $color-text-light;
+      @media screen and (max-width: 576px) {
+        align-self: flex-end;
+      }
     }
     &_more {
       grid-area: button-more;
