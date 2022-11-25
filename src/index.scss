@@ -36,7 +36,7 @@
   position: sticky;
   top: 0;
   &__container {
-    @include container;
+    @include container(space-between);
     @include flexible(100%);
 
     text-transform: uppercase;
@@ -112,6 +112,72 @@
   }
   &__nav {
     @include flexible(auto);
+  }
+}
+
+.about {
+  @include gridable(100%);
+  grid-template-areas:
+    'title title  '
+    'article article'
+    'button-order button-more';
+  gap: 80px 30px;
+  @include container(start);
+  padding-top: 103px;
+  padding-bottom: 202px;
+  height: 100%;
+  &__title {
+    align-self: center;
+    grid-area: title;
+    vertical-align: middle;
+    @include title();
+    font-weight: 700;
+    font-size: 48px;
+    height: 125px;
+    &-black {
+      color: $color-text-dark;
+    }
+  }
+  &__text {
+    @include gridable(100%);
+    gap: 10px;
+    grid-area: article;
+    font-size: 20px;
+    line-height: 1.2;
+  }
+  &__paragraph {
+    font-weight: 700;
+    margin: 0;
+  }
+  &__list {
+    @include gridable(100%);
+    gap: 5px;
+    list-style-type: '-';
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    &-item {
+      padding-left: 10px;
+    }
+  }
+  &__button {
+    @include button(183px);
+    font-size: 13px;
+    line-height: 1.2;
+    height: 43px;
+    border-radius: 4px;
+    &_order {
+      grid-area: button-order;
+      background-color: $color-decorate;
+      border: 1px solid $color-text-light;
+      color: $color-text-light;
+    }
+    &_more {
+      grid-area: button-more;
+      background-color: $color-text-light;
+      border: 1px solid $color-button-radius;
+      color: $color-button-dark;
+    }
   }
 }
 
