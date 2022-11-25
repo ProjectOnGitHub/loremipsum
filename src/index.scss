@@ -100,7 +100,8 @@
       display: none;
       @media screen and (max-width: 720px) {
         z-index: 2;
-        @include button(32px);
+        @include button();
+        @include flexible(32px);
         height: 32px;
         padding: 0;
         border: none;
@@ -162,7 +163,8 @@
     }
   }
   &__button {
-    @include button(183px);
+    @include button();
+    @include flexible(183px);
     font-size: 13px;
     line-height: 1.2;
     height: 43px;
