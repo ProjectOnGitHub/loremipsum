@@ -129,15 +129,14 @@
   padding-bottom: 202px;
   height: 100%;
   &__title {
-    align-self: center;
+    @include gridable(100%);
     grid-area: title;
-    vertical-align: middle;
     @include title();
     font-weight: 700;
     font-size: 48px;
     height: 125px;
-    &-black {
-      color: $color-text-dark;
+    &-decorate {
+      color: $color-decorate;
     }
   }
   &__text {
