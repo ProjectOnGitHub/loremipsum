@@ -121,6 +121,7 @@
     'title title  '
     'article article'
     'button-order button-more';
+  grid-template-columns: min-content 1fr;
   gap: 80px 30px;
   @include container(start);
   padding-top: 103px;
