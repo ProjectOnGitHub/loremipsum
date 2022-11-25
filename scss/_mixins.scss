@@ -38,3 +38,11 @@
     opacity: 0.8;
   }
 }
+
+@mixin container {
+  padding: 0 20px;
+  box-sizing: border-box;
+  max-width: calc($max-width + 40px);
+  justify-content: space-between;
+  align-items: center;
+}

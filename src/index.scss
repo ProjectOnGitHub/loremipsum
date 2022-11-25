@@ -36,12 +36,9 @@
   position: sticky;
   top: 0;
   &__container {
-    padding: 0 20px;
-    box-sizing: border-box;
-    max-width: calc($max-width + 40px);
+    @include container;
     @include flexible(100%);
-    justify-content: space-between;
-    align-items: center;
+
     text-transform: uppercase;
   }
   &__logo {
