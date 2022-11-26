@@ -119,11 +119,11 @@
   height: 100%;
   z-index: 0;
   background-color: $color-bg-text-order;
+  position: relative;
+  top: -$header-height;
 }
 
 .about {
-  position: relative;
-  top: -$header-height;
   background: url('/src/images/background.png') top no-repeat;
   background-size: cover;
   @include gridable(100%);
@@ -239,6 +239,11 @@
       color: $color-text-btn-secondary;
     }
   }
+}
+
+.order {
+  @include gridable(100%);
+  background: url('./images/background-order.png') top no-repeat;
 }
 
 .overlay {
