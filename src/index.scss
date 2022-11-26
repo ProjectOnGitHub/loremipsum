@@ -10,7 +10,6 @@
   grid-template-columns: 1fr;
   justify-items: center;
   height: 100%;
-  position: relative;
 }
 
 .scroll-lock {
@@ -123,8 +122,8 @@
 }
 
 .about {
-  position: absolute;
-  top: 0;
+  position: relative;
+  top: -$header-height;
   background: url('/src/images/background.png') top no-repeat;
   background-size: cover;
   background-size: cover;
