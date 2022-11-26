@@ -222,6 +222,10 @@
     line-height: 1.2;
     height: 43px;
     border-radius: 4px;
+    @media screen and (max-width: 576px) {
+      width: 100%;
+      max-width: 400px;
+    }
     &_order {
       grid-area: button-order;
       background-color: $color-bg-text-decorate;
