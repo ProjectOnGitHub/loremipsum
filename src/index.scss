@@ -8,9 +8,8 @@
   font-style: normal;
   box-sizing: border-box;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(3, 1fr);
   justify-items: center;
-  height: 100vh;
+  height: 100%;
   position: relative;
 }
 
@@ -118,50 +117,62 @@
   }
 }
 .main {
+  height: 100%;
+  z-index: 0;
+  background-color: $color-bg-text-order;
+}
+
+.about {
   position: absolute;
   top: 0;
   background: url('/src/images/background.png') top no-repeat;
   background-size: cover;
-  height: 100%;
-  @include backgroundImgHeight();
-  z-index: 0;
-}
-
-.about {
   background-size: cover;
   @include gridable(100%);
-  grid-template-areas:
-    'title title  '
-    'article article'
-    'button-order button-more';
-  grid-template-columns: min-content 1fr;
-  column-gap: 30px;
-  @include container(start);
-  padding-bottom: 202px;
+  gap: 80px 30px;
+  justify-items: center;
   height: 100vh;
-  align-content: space-between;
-  padding-top: calc($header-height + 103px);
   @include backgroundImgHeight();
-  @media screen and (max-width: 1024px) {
-    padding-top: calc($header-height + 103px - 40px);
-    padding-bottom: calc(202px - 40px);
-  }
-  @media screen and (max-width: 576px) {
-    row-gap: 10px;
-    justify-items: center;
+
+  &__article {
+    @include gridable(100%);
+    @include container(space-between);
+    grid-template-columns: min-content 1fr;
     grid-template-areas:
-      'title'
-      'article'
-      'button-order'
-      'button-more';
-    grid-template-columns: 1fr;
-    align-content: initial;
+      'title title  '
+      'text text'
+      'button-order button-more';
+    column-gap: 30px;
+    align-content: space-between;
+    font-size: 20px;
+    line-height: 1.2;
+    padding-bottom: 202px;
+    padding-top: calc($header-height + 103px);
+    @media screen and (max-width: 1024px) {
+      padding-top: calc($header-height + 103px - 40px);
+      padding-bottom: calc(202px - 40px);
+    }
+    @media screen and (max-width: 576px) {
+      row-gap: 10px;
+      justify-items: center;
+      grid-template-columns: 1fr;
+      align-content: initial;
+      grid-template-areas:
+        'title '
+        'text'
+        'button-order'
+        'button-more';
+    }
+    @media screen and (max-width: 576px) {
+      font-size: 16px;
+    }
   }
 
   &__title {
-    @include flexible(100%);
-    flex-flow: column nowrap;
     grid-area: title;
+    @include flexible(100%);
+    justify-content: center;
+    flex-flow: column nowrap;
     @include title();
     font-weight: 700;
     font-size: 48px;
@@ -184,14 +195,10 @@
     }
   }
   &__text {
-    @include gridable(100%);
+    @include flexible(100%);
+    flex-flow: column nowrap;
+    grid-area: text;
     gap: 10px;
-    grid-area: article;
-    font-size: 20px;
-    line-height: 1.2;
-    @media screen and (max-width: 576px) {
-      font-size: 16px;
-    }
   }
   &__paragraph {
     font-weight: 700;
