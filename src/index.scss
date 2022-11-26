@@ -29,7 +29,7 @@
 }
 
 .header {
-  background-color: rgba($color-header-bg, 0.9);
+  background-color: rgba($color-bg-header, 0.9);
   height: $header-height;
   align-items: center;
   position: sticky;
@@ -42,8 +42,7 @@
     text-transform: uppercase;
   }
   &__logo {
-    @include link($color-text-light);
-    color: $color-text-light;
+    @include link($color-bg-text-secondary);
     font-family: 'Raleway', Arial, sans-serif;
     font-weight: 800;
     font-size: 28px;
@@ -53,7 +52,7 @@
       font-size: 26px;
     }
     &_blue {
-      color: $color-logo;
+      color: $color-text-logo-decorate;
     }
   }
   &__menu {
@@ -83,7 +82,7 @@
       height: 100vh;
       transition: 0.5s;
       opacity: 0;
-      background-color: $color-header-bg;
+      background-color: $color-bg-header;
       font-size: 18px;
       &_opened {
         right: 0;
@@ -94,9 +93,9 @@
       }
     }
     &-link {
-      @include link($color-text-light);
+      @include link($color-bg-text-secondary);
       &_active {
-        color: $color-active-link;
+        color: $color-link-active;
       }
     }
     &-button {
@@ -181,7 +180,7 @@
       font-size: 22px;
     }
     &-decorate {
-      color: $color-decorate;
+      color: $color-bg-text-decorate;
     }
   }
   &__text {
@@ -218,18 +217,18 @@
     border-radius: 4px;
     &_order {
       grid-area: button-order;
-      background-color: $color-decorate;
-      border: 1px solid $color-text-light;
-      color: $color-text-light;
+      background-color: $color-bg-text-decorate;
+      border: 1px solid $color-bg-text-secondary;
+      color: $color-bg-text-secondary;
       @media screen and (max-width: 576px) {
         align-self: flex-end;
       }
     }
     &_more {
       grid-area: button-more;
-      background-color: $color-text-light;
-      border: 1px solid $color-button-radius;
-      color: $color-button-dark;
+      background-color: $color-bg-text-secondary;
+      border: 1px solid $color-border-btn;
+      color: $color-text-btn-secondary;
     }
   }
 }
@@ -246,7 +245,7 @@
     height: 100vh;
     transition: 0.5s;
     opacity: 0;
-    background: $color-header-bg;
+    background: $color-bg-header;
     &_active {
       left: 0;
 
@@ -275,7 +274,7 @@
     content: '';
     transition: 0.5s;
     border-radius: 2px;
-    background: $color-text-light;
+    background: $color-bg-text-secondary;
   }
   &_active {
     &:before {
