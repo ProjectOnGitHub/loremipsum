@@ -244,15 +244,15 @@
 .order {
   @include gridable(100%);
   background: url('./images/background-order.png') top no-repeat;
-  background-size: contain;
-  justify-items: center;
+  background-size: cover;
+  justify-content: center;
   max-width: 1920px;
   padding: 121px 0 151px;
   color: $color-bg-text-secondary;
   &__container {
-    @include gridable(100%);
-    @include container(space-between);
+    @include container(center);
     justify-items: center;
+    @include gridable(100%);
   }
   &__title {
     @include title();
@@ -261,6 +261,7 @@
     line-height: 1.2;
     color: $color-bg-text-secondary;
     margin-bottom: 30px;
+    text-align: center;
     &-decorate {
       color: $color-bg-text-decorate;
     }
@@ -270,20 +271,48 @@
     margin: 0;
     font-size: 18px;
     line-height: 1.2;
+    text-align: center;
   }
   &__scheme {
-    @include unmarkedList(0, 0);
-    @include gridable(100%);
+    margin: 0;
+    padding: 0;
+    @include flexible(100%);
+    flex-flow: row nowrap;
     justify-content: space-between;
-    grid-template-columns: repeat(5, 209px);
+    gap: 30px 20px;
     margin: 80px 0;
+    @media screen and (max-width: 1150px) {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
     &-item {
-      @include gridable(100%);
+      position: relative;
+
+      @include gridable(209px);
       grid-template-rows: min-content 1fr;
       gap: 20px;
       justify-items: center;
       line-height: 1.2;
       font-size: 16px;
+      &::before {
+        content: '••••';
+        letter-spacing: 20px;
+        color: $color-marker-order;
+        position: absolute;
+        top: 45px;
+        position: absolute;
+        right: 0;
+        width: 50%;
+        height: 6px;
+        transform: translateX(60%);
+        @media screen and (max-width: 1150px) {
+          display: none;
+        }
+      }
+      &:last-child::before {
+        display: none;
+      }
     }
     &-subtitle {
       margin: 0;
