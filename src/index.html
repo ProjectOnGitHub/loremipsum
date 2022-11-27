@@ -73,108 +73,116 @@
           </article>
         </section>
         <section class="order">
-          <h2 class="order__title">Оформление заказа</h2>
-          <p class="order__subtitle">
-            Перед заполнением формы ознакомьтесь с нашей схемой работы!
-          </p>
-          <ul class="order__scheme">
-            <li class="order__scheme-item">
-              <svg class="order__icon">
-                <use xlink:href="#scheme-search-icon"></use>
-              </svg>
-              <p class="order__scheme-title">Lorem ipsum dolor sit amet</p>
-            </li>
-            <li class="order__scheme-item">
-              <svg class="order__icon">
-                <use xlink:href="#scheme-percent-icon"></use>
-              </svg>
-              <p class="order__scheme-title">Сonsecteturadipiscing elit</p>
-            </li>
-            <li class="order__scheme-item">
-              <svg class="order__icon">
-                <use xlink:href="#scheme-file-icon"></use>
-              </svg>
-              <p class="order__scheme-title">Sed do eiusmod tempor</p>
-            </li>
-            <li class="order__scheme-item">
-              <svg class="order__icon">
-                <use xlink:href="#scheme-email-icon"></use>
-              </svg>
-              <p class="order__scheme-title">Esse cillum dolore eu fugiat</p>
-            </li>
-            <li class="order__scheme-item">
-              <svg class="order__icon">
-                <use xlink:href="#scheme-money-icon"></use>
-              </svg>
-              <p class="order__scheme-title">
-                Excepteur sint occaecat cupidatat non proident
-              </p>
-            </li>
-          </ul>
-          <form action="" class="order__container">
-            <fieldset class="order__fieldset">
-              <select name="system" id="system-select">
-                <option value="system-title" disabled>
-                  Выберите тип системы
-                </option>
-                <option value="system-1">Sed ut perspiciatis</option>
-                <option value="system-2">Nemo enim ipsam</option>
-                <option value="system-3">Et harum quidem</option>
-                <option value="system-4">Temporibus autem</option>
-                <option value="system-5">Itaque earum rerum</option>
-                <option value="system-6">Sed harum enim</option>
-              </select>
-              <input
-                name="email"
-                type="email"
-                placeholder="Ваш e-mail"
-                class="order__input order__input_email"
-                id="email-input"
-                required
-                autocomplete="off"
-              />
-              <input
-                name="name"
-                type="text"
-                placeholder="Ваше имя"
-                class="order__input order__input_name"
-                id="name-input"
-                required
-                autocomplete="off"
-              />
-            </fieldset>
-            <fieldset class="order__fieldset">
-              <label class="order__label">
-                <input
-                  name="range"
-                  type="range"
-                  id="range-input"
-                  min="1"
-                  max="100"
-                  value="75"
-                  step="1"
-                  class="order__input order__input_range"
-                />
-                Sed ut perspiciatis, unde omnis iste natus
-                <span class="order__input-value" id="range-input-value"
-                  >75%</span
-                >
-              </label>
-              <label class="order__label">
-                <input
-                  name="file"
-                  type="file"
-                  class="order__input order__input_file"
-                  id="file-input"
-                />
-                <svg class="form__icon">
-                  <use xlink:href="#form-file-icon"></use>
+          <div class="order__container">
+            <h2 class="order__title">
+              Оформление <span class="order__title-decorate">заказа</span>
+            </h2>
+            <p class="order__subtitle">
+              Перед заполнением формы ознакомьтесь с нашей схемой работы!
+            </p>
+            <ul class="order__scheme">
+              <li class="order__scheme-item">
+                <svg class="order__icon">
+                  <use xlink:href="#scheme-search-icon"></use>
                 </svg>
-                Прикрепить файл</label
-              >
-            </fieldset>
-            <button type="submit" class="order__send-button">Отправить</button>
-          </form>
+                <p class="order__scheme-subtitle">Lorem ipsum dolor sit amet</p>
+              </li>
+              <li class="order__scheme-item">
+                <svg class="order__icon">
+                  <use xlink:href="#scheme-percent-icon"></use>
+                </svg>
+                <p class="order__scheme-subtitle">Сonsecteturadipiscing elit</p>
+              </li>
+              <li class="order__scheme-item">
+                <svg class="order__icon">
+                  <use xlink:href="#scheme-file-icon"></use>
+                </svg>
+                <p class="order__scheme-subtitle">Sed do eiusmod tempor</p>
+              </li>
+              <li class="order__scheme-item">
+                <svg class="order__icon">
+                  <use xlink:href="#scheme-email-icon"></use>
+                </svg>
+                <p class="order__scheme-subtitle">
+                  Esse cillum dolore eu fugiat
+                </p>
+              </li>
+              <li class="order__scheme-item">
+                <svg class="order__icon">
+                  <use xlink:href="#scheme-money-icon"></use>
+                </svg>
+                <p class="order__scheme-subtitle">
+                  Excepteur sint occaecat cupidatat non proident
+                </p>
+              </li>
+            </ul>
+            <form action="" class="order__container">
+              <fieldset class="order__fieldset">
+                <select name="system" id="system-select">
+                  <option value="system-title" disabled>
+                    Выберите тип системы
+                  </option>
+                  <option value="system-1">Sed ut perspiciatis</option>
+                  <option value="system-2">Nemo enim ipsam</option>
+                  <option value="system-3">Et harum quidem</option>
+                  <option value="system-4">Temporibus autem</option>
+                  <option value="system-5">Itaque earum rerum</option>
+                  <option value="system-6">Sed harum enim</option>
+                </select>
+                <input
+                  name="email"
+                  type="email"
+                  placeholder="Ваш e-mail"
+                  class="order__input order__input_email"
+                  id="email-input"
+                  required
+                  autocomplete="off"
+                />
+                <input
+                  name="name"
+                  type="text"
+                  placeholder="Ваше имя"
+                  class="order__input order__input_name"
+                  id="name-input"
+                  required
+                  autocomplete="off"
+                />
+              </fieldset>
+              <fieldset class="order__fieldset">
+                <label class="order__label">
+                  <input
+                    name="range"
+                    type="range"
+                    id="range-input"
+                    min="1"
+                    max="100"
+                    value="75"
+                    step="1"
+                    class="order__input order__input_range"
+                  />
+                  Sed ut perspiciatis, unde omnis iste natus
+                  <span class="order__input-value" id="range-input-value"
+                    >75%</span
+                  >
+                </label>
+                <label class="order__label">
+                  <input
+                    name="file"
+                    type="file"
+                    class="order__input order__input_file"
+                    id="file-input"
+                  />
+                  <svg class="form__icon">
+                    <use xlink:href="#form-file-icon"></use>
+                  </svg>
+                  Прикрепить файл</label
+                >
+              </fieldset>
+              <button type="submit" class="order__send-button">
+                Отправить
+              </button>
+            </form>
+          </div>
         </section>
       </main>
       <footer class="footer">

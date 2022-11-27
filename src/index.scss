@@ -244,6 +244,58 @@
 .order {
   @include gridable(100%);
   background: url('./images/background-order.png') top no-repeat;
+  background-size: contain;
+  justify-items: center;
+  max-width: 1920px;
+  padding: 121px 0 151px;
+  color: $color-bg-text-secondary;
+  &__container {
+    @include gridable(100%);
+    @include container(space-between);
+    justify-items: center;
+  }
+  &__title {
+    @include title();
+    font-weight: 800;
+    font-size: 36px;
+    line-height: 1.2;
+    color: $color-bg-text-secondary;
+    margin-bottom: 30px;
+    &-decorate {
+      color: $color-bg-text-decorate;
+    }
+  }
+  &__subtitle {
+    color: $color-text-subtitle;
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.2;
+  }
+  &__scheme {
+    @include unmarkedList(0, 0);
+    @include gridable(100%);
+    justify-content: space-between;
+    grid-template-columns: repeat(5, 209px);
+    margin: 80px 0;
+    &-item {
+      @include gridable(100%);
+      grid-template-rows: min-content 1fr;
+      gap: 20px;
+      justify-items: center;
+      line-height: 1.2;
+      font-size: 16px;
+    }
+    &-subtitle {
+      margin: 0;
+      text-align: center;
+      font-size: 16px;
+      line-height: 1.2;
+    }
+  }
+  &__icon {
+    width: 100px;
+    height: 100px;
+  }
 }
 
 .overlay {
