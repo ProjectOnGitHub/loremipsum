@@ -296,16 +296,17 @@
       line-height: 1.2;
       font-size: 16px;
       &::before {
-        content: '••••';
-        letter-spacing: 20px;
+        content: '•••••';
+        font-size: 13px;
+        letter-spacing: 18px;
         color: $color-marker-order;
         position: absolute;
-        top: 45px;
+        top: 42px;
         position: absolute;
         right: 0;
         width: 50%;
         height: 6px;
-        transform: translateX(60%);
+        transform: translateX(63%);
         @media screen and (max-width: 1150px) {
           display: none;
         }
