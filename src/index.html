@@ -116,22 +116,30 @@
                 </p>
               </li>
             </ul>
-            <form action="" class="form__container">
+            <form action="" class="form">
               <fieldset class="form__fieldset">
-                <select
-                  name="system"
-                  id="system-select"
-                  class="form__input form__input_system"
-                >
-                  <option value="system-title" disabled>
+                <select name="system" id="system-select" class="form__select">
+                  <option value="system-title" selected disabled hidden>
                     Выберите тип системы
                   </option>
-                  <option value="system-1">Sed ut perspiciatis</option>
-                  <option value="system-2">Nemo enim ipsam</option>
-                  <option value="system-3">Et harum quidem</option>
-                  <option value="system-4">Temporibus autem</option>
-                  <option value="system-5">Itaque earum rerum</option>
-                  <option value="system-6">Sed harum enim</option>
+                  <option value="system-1" class="form__select-option">
+                    Sed ut perspiciatis
+                  </option>
+                  <option value="system-2" class="form__select-option">
+                    Nemo enim ipsam
+                  </option>
+                  <option value="system-3" class="form__select-option">
+                    Et harum quidem
+                  </option>
+                  <option value="system-4" class="form__select-option">
+                    Temporibus autem
+                  </option>
+                  <option value="system-5" class="form__select-option">
+                    Itaque earum rerum
+                  </option>
+                  <option value="system-6" class="form__select-option">
+                    Sed harum enim
+                  </option>
                 </select>
                 <input
                   name="email"
@@ -151,7 +159,13 @@
                   required
                   autocomplete="off"
                 />
-                <label class="form__label">
+                <label class="form__label form__label_range">
+                  <span class="form__label-text-range">
+                    Sed ut perspiciatis, unde omnis iste natus</span
+                  >
+                  <span class="form__label-value" id="form-label-value"
+                    >75%</span
+                  >
                   <input
                     name="range"
                     type="range"
@@ -160,25 +174,24 @@
                     max="100"
                     value="75"
                     step="1"
-                    class="order__input order__input_range"
+                    class="form__input form__input_range"
                   />
-                  Sed ut perspiciatis, unde omnis iste natus
-                  <span class="form__input-value" id="form-input-value"
-                    >75%</span
-                  >
                 </label>
-                <label class="form__label">
+                <label class="form__label form__label_file">
                   <input
                     name="file"
                     type="file"
                     class="form__input form__input_file"
                     id="file-input"
                   />
-                  <svg class="form__icon">
-                    <use xlink:href="#form-file-icon"></use>
-                  </svg>
-                  Прикрепить файл</label
-                >
+
+                  <span class="form__label-text-file">
+                    <svg class="form__icon">
+                      <use xlink:href="#form-file-icon"></use>
+                    </svg>
+                    Прикрепить файл</span
+                  >
+                </label>
               </fieldset>
               <button type="submit" class="form__send-button">Отправить</button>
             </form>

@@ -38,6 +38,11 @@
     opacity: 0.8;
   }
 }
+@mixin buttonOrder {
+  background-color: #3e9cdc;
+  border: 1px solid #fff;
+  color: #fff;
+}
 
 @mixin container($justify-content) {
   padding: 0 20px;
@@ -60,4 +65,24 @@
   @media screen and (max-width: 1024px) {
     min-height: calc($header-height + 750px - 80px);
   }
+}
+
+@mixin formElement {
+  height: 48px;
+  max-width: 370px;
+  box-sizing: border-box;
+  background-color: rgba($color-bg-text-secondary, 0.85);
+  color: $color-bg-text-order;
+  border: 1px solid $color-bg-text-secondary;
+  line-height: 1.2;
+  font-size: 18px;
+  border-radius: 3px;
+  outline: none;
+  width: 100%;
+}
+
+@mixin focus() {
+  background-color: $form-bg-select;
+  border-color: $form-bg-select;
+  color: $color-bg-text-secondary;
 }
