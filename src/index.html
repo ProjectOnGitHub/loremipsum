@@ -116,9 +116,13 @@
                 </p>
               </li>
             </ul>
-            <form action="" class="order__container">
-              <fieldset class="order__fieldset">
-                <select name="system" id="system-select">
+            <form action="" class="form__container">
+              <fieldset class="form__fieldset">
+                <select
+                  name="system"
+                  id="system-select"
+                  class="form__input form__input_system"
+                >
                   <option value="system-title" disabled>
                     Выберите тип системы
                   </option>
@@ -133,7 +137,7 @@
                   name="email"
                   type="email"
                   placeholder="Ваш e-mail"
-                  class="order__input order__input_email"
+                  class="form__input form__input_email"
                   id="email-input"
                   required
                   autocomplete="off"
@@ -142,14 +146,12 @@
                   name="name"
                   type="text"
                   placeholder="Ваше имя"
-                  class="order__input order__input_name"
+                  class="form__input form__input_name"
                   id="name-input"
                   required
                   autocomplete="off"
                 />
-              </fieldset>
-              <fieldset class="order__fieldset">
-                <label class="order__label">
+                <label class="form__label">
                   <input
                     name="range"
                     type="range"
@@ -161,15 +163,15 @@
                     class="order__input order__input_range"
                   />
                   Sed ut perspiciatis, unde omnis iste natus
-                  <span class="order__input-value" id="range-input-value"
+                  <span class="form__input-value" id="form-input-value"
                     >75%</span
                   >
                 </label>
-                <label class="order__label">
+                <label class="form__label">
                   <input
                     name="file"
                     type="file"
-                    class="order__input order__input_file"
+                    class="form__input form__input_file"
                     id="file-input"
                   />
                   <svg class="form__icon">
@@ -178,9 +180,7 @@
                   Прикрепить файл</label
                 >
               </fieldset>
-              <button type="submit" class="order__send-button">
-                Отправить
-              </button>
+              <button type="submit" class="form__send-button">Отправить</button>
             </form>
           </div>
         </section>
