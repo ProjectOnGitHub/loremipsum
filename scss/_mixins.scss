@@ -69,7 +69,6 @@
 
 @mixin formElement {
   height: 48px;
-  max-width: 370px;
   box-sizing: border-box;
   background-color: rgba($color-bg-text-secondary, 0.85);
   color: $color-bg-text-order;
