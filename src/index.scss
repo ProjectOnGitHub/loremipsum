@@ -344,12 +344,12 @@
       'label-range label-range label-file';
   }
   &__select {
+    appearance: none;
     @include formElement();
     @include gridable(100%);
     grid-area: select-system;
     padding-left: 10px;
     padding-right: 10px;
-    appearance: none;
     background-image: url(./images/arrow-down.png);
     background-repeat: no-repeat;
     background-position: calc(100% - 10px) center;
@@ -361,6 +361,9 @@
       background-color: $color-bg-text-order;
       line-height: 1.88;
       padding: 10px 0;
+      &:checked {
+        color: $color-text-logo-decorate;
+      }
     }
   }
   &__input {
@@ -382,8 +385,27 @@
       grid-area: input-name;
     }
     &_range {
+      appearance: none;
       grid-area: input-range;
       max-width: none;
+      height: 6px;
+      background-color: rgba($color-bg-text-secondary, 0.7);
+      border: 1px solid $color-bg-text-secondary;
+      padding: 0;
+      cursor: pointer;
+      &:focus {
+        background-color: rgba($color-bg-text-secondary, 0.7);
+        border: 1px solid $color-bg-text-secondary;
+      }
+      &::-webkit-slider-thumb {
+        @include thumb();
+      }
+      &::-moz-range-thumb {
+        @include thumb();
+      }
+      &::-ms-thumb {
+        @include thumb();
+      }
     }
     &_file {
       visibility: hidden;
@@ -466,7 +488,6 @@
     }
   }
 }
-
 .cross {
   @include gridable(100%);
   align-content: space-between;

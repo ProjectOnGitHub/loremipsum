@@ -86,3 +86,20 @@
   border-color: $form-bg-select;
   color: $color-bg-text-secondary;
 }
+
+@mixin thumb() {
+  appearance: none;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background-color: $color-text-logo-decorate;
+  border: 3px solid $color-border-thumb;
+  transition: transform 0.3s ease-in-out;
+  box-sizing: border-box;
+  &:hover {
+    transform: scale(1.07);
+  }
+  &:active {
+    transform: scale(0.93);
+  }
+}
