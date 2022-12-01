@@ -116,7 +116,7 @@
   }
 }
 .main {
-  height: 100%;
+  height: calc(100% + $header-height);
   z-index: 0;
   background-color: $color-bg-text-order;
   position: relative;
@@ -474,6 +474,68 @@
     height: 48px;
     border-radius: 4px;
     max-width: $form-input-width;
+  }
+}
+
+.footer {
+  background-color: $color-bg-footer;
+  height: 80px;
+  &__container {
+    font-size: 13px;
+    @include container(space-between);
+    @include gridable(100%);
+    grid-template-columns: 1fr minmax(300px, 476px) 1fr;
+  }
+  &__copyright {
+    padding: 0;
+    margin: 0;
+    color: $color-bg-text-secondary;
+  }
+  &__payment {
+    color: $color-text-footer;
+    justify-content: space-between;
+    @include unmarkedList(0, 0);
+    @include gridable(100%);
+    grid-template-columns: repeat(5, min-content);
+    gap: 38px;
+    &::before,
+    &::after {
+      content: '';
+      box-sizing: border-box;
+      width: 0px;
+      height: 18px;
+      border-left: 1px solid $color-text-footer;
+    }
+    &-item {
+      justify-content: center;
+      @include flexible(100%);
+      align-items: center;
+      gap: 10px;
+    }
+    &-name {
+      margin: 0;
+      white-space: nowrap;
+    }
+  }
+  &__contacts {
+    @include unmarkedList(0, 0);
+    @include gridable(100%);
+    gap: 38px;
+    grid-template-columns: 1fr min-content;
+    &-item {
+      @include gridable(100%);
+      grid-template-columns: repeat(2, min-content);
+      justify-content: end;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+  &__icon {
+    width: 20px;
+    height: 20px;
+  }
+  &__link {
+    @include link($color-text-footer);
   }
 }
 
