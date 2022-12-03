@@ -430,6 +430,9 @@
   &__label {
     @include gridable(100%);
     height: 48px;
+    @media screen and (max-width: 480px) {
+      font-size: 13px;
+    }
     &_range {
       grid-area: label-range;
       justify-content: space-between;
