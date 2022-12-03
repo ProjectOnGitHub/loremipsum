@@ -102,3 +102,10 @@
     transform: scale(0.93);
   }
 }
+
+@mixin footerGap() {
+  gap: 38px;
+  @media screen and (max-width: 576px) {
+    gap: 14px;
+  }
+}

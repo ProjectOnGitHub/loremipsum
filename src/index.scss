@@ -479,25 +479,48 @@
 
 .footer {
   background-color: $color-bg-footer;
-  height: 80px;
+  min-height: 80px;
+  height: 100%;
   &__container {
     font-size: 13px;
     @include container(space-between);
     @include gridable(100%);
-    grid-template-columns: 1fr minmax(300px, 476px) 1fr;
+    grid-template-columns: 1fr minmax(347px, 476px) 1fr;
+    grid-template-areas: 'copyright payment contacts';
+    @media screen and (max-width: 1210px) {
+      padding: 30px 10px;
+      gap: 20px;
+      justify-content: center;
+      justify-items: center;
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        'contacts'
+        'payment'
+        'copyright';
+    }
+    @media screen and (max-width: 576px) {
+      font-size: 10px;
+    }
   }
   &__copyright {
+    grid-area: copyright;
     padding: 0;
     margin: 0;
     color: $color-bg-text-secondary;
+    white-space: nowrap;
   }
   &__payment {
+    grid-area: payment;
     color: $color-text-footer;
     justify-content: space-between;
     @include unmarkedList(0, 0);
     @include gridable(100%);
     grid-template-columns: repeat(5, min-content);
-    gap: 38px;
+    @include footerGap();
+    @media screen and (max-width: 1210px) {
+      grid-template-columns: repeat(3, min-content);
+      justify-content: center;
+    }
     &::before,
     &::after {
       content: '';
@@ -505,6 +528,9 @@
       width: 0px;
       height: 18px;
       border-left: 1px solid $color-text-footer;
+      @media screen and (max-width: 1210px) {
+        content: none;
+      }
     }
     &-item {
       justify-content: center;
@@ -518,10 +544,15 @@
     }
   }
   &__contacts {
+    grid-area: contacts;
     @include unmarkedList(0, 0);
     @include gridable(100%);
-    gap: 38px;
+    @include footerGap();
     grid-template-columns: 1fr min-content;
+    @media screen and (max-width: 1210px) {
+      grid-template-columns: repeat(2, min-content);
+      justify-content: center;
+    }
     &-item {
       @include gridable(100%);
       grid-template-columns: repeat(2, min-content);
