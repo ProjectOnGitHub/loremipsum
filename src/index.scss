@@ -3,13 +3,13 @@
 
 .root {
   @include gridable(100%);
-  font-family: 'Lato', Arial, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  box-sizing: border-box;
   grid-template-columns: 1fr;
   justify-items: center;
+  box-sizing: border-box;
   height: 100%;
+  font-weight: 400;
+  font-family: 'Lato', Arial, sans-serif;
+  font-style: normal;
 }
 
 .scroll-lock {
@@ -20,31 +20,30 @@
 .main,
 .footer {
   @include gridable(100%);
+  grid-template-columns: 1fr;
   justify-items: center;
   box-sizing: border-box;
   width: 100%;
-  grid-template-columns: 1fr;
 }
 
 .header {
-  background-color: rgba($color-bg-header, 0.9);
-  height: $header-height;
-  align-items: center;
   position: sticky;
-  z-index: 1;
   top: 0;
+  z-index: 1;
+  align-items: center;
+  height: $header-height;
+  background-color: rgba($color-bg-header, 0.9);
   &__container {
     @include container(space-between);
     @include flexible(100%);
-
     text-transform: uppercase;
   }
   &__logo {
     @include link($color-bg-text-secondary);
-    font-family: 'Raleway', Arial, sans-serif;
     font-weight: 800;
     font-size: 28px;
     line-height: 1.18;
+    font-family: 'Raleway', Arial, sans-serif;
     font-style: normal;
     @media screen and (max-width: 576px) {
       font-size: 26px;
@@ -55,39 +54,39 @@
   }
   &__menu {
     @include flexible(100%);
-    font-weight: 600;
-    line-height: 1.2;
-    font-size: 13px;
-    gap: 60px;
-    flex-flow: row nowrap;
     @include unmarkedList(0, 0);
+    flex-flow: row nowrap;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 1.2;
+    gap: 60px;
     @media screen and (max-width: 1024px) {
       gap: 40px;
     }
     @media screen and (max-width: 720px) {
       position: fixed;
-      z-index: 1;
       top: 0;
       right: -320px;
-      visibility: hidden;
+      z-index: 1;
+      justify-content: center;
+      flex-direction: column;
       align-content: center;
       align-items: center;
-      flex-direction: column;
-      justify-content: center;
       box-sizing: border-box;
       width: 100%;
       max-width: 320px;
       height: 100vh;
-      transition: 0.5s;
-      opacity: 0;
-      background-color: $color-bg-header;
       font-size: 18px;
+      background-color: $color-bg-header;
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.5s;
       &_opened {
         right: 0;
         display: flex;
         visibility: visible;
-        transition: 0.5s;
         opacity: 1;
+        transition: 0.5s;
       }
     }
     &-link {
@@ -99,15 +98,15 @@
     &-button {
       display: none;
       @media screen and (max-width: 720px) {
-        z-index: 2;
-        @include button();
         @include flexible(32px);
+        @include button();
+        z-index: 2;
         height: 32px;
         padding: 0;
-        border: none;
-        border-radius: 0;
         background-color: transparent;
         background-size: contain;
+        border: none;
+        border-radius: 0;
       }
     }
   }
@@ -116,49 +115,49 @@
   }
 }
 .main {
-  height: calc(100% + $header-height);
-  z-index: 0;
-  background-color: $color-bg-text-order;
   position: relative;
   top: -$header-height;
+  z-index: 0;
+  height: calc(100% + $header-height);
+  background-color: $color-bg-text-order;
 }
 
 .about {
-  background: url('/src/images/background.png') top no-repeat;
-  background-size: cover;
   @include gridable(100%);
+  @include backgroundImgHeight();
   justify-items: center;
   height: 100vh;
-  @include backgroundImgHeight();
+  background: url('/src/images/background.png') top no-repeat;
+  background-size: cover;
 
   &__article {
     @include gridable(100%);
     @include container(space-between);
-    grid-template-columns: min-content 1fr;
-    grid-template-rows: repeat(4, min-content);
     grid-template-areas:
       'title title  '
       'text text'
       'button-order button-more';
-    column-gap: 30px;
-    gap: 80px 30px;
+    grid-template-columns: min-content 1fr;
+    grid-template-rows: repeat(4, min-content);
+    padding-top: calc($header-height + 103px);
     font-size: 20px;
     line-height: 1.2;
-    padding-top: calc($header-height + 103px);
+    column-gap: 30px;
+    gap: 80px 30px;
     @media screen and (max-width: 1024px) {
       padding-top: calc($header-height + 103px - 20px);
     }
     @media screen and (max-width: 576px) {
-      gap: 20px;
-      justify-items: center;
-      align-items: start;
-      grid-template-columns: 1fr;
-      align-content: initial;
       grid-template-areas:
         'title '
         'text'
         'button-order'
         'button-more';
+      grid-template-columns: 1fr;
+      justify-items: center;
+      align-content: initial;
+      align-items: start;
+      gap: 20px;
     }
     @media screen and (max-width: 576px) {
       font-size: 16px;
@@ -166,15 +165,15 @@
   }
 
   &__title {
-    grid-area: title;
     @include flexible(100%);
+    @include title();
+    grid-area: title;
     justify-content: center;
     flex-flow: column nowrap;
-    @include title();
+    align-content: center;
+    height: 125px;
     font-weight: 700;
     font-size: 48px;
-    height: 125px;
-    align-content: center;
     @media screen and (max-width: 1024px) {
       height: 100%;
     }
@@ -193,21 +192,21 @@
   }
   &__text {
     @include flexible(100%);
-    flex-flow: column nowrap;
     grid-area: text;
+    flex-flow: column nowrap;
     gap: 10px;
   }
   &__paragraph {
-    font-weight: 700;
     margin: 0;
+    font-weight: 700;
   }
   &__list {
     @include gridable(100%);
-    gap: 5px;
-    list-style-type: '-';
     box-sizing: border-box;
-    padding: 0;
     margin: 0 0 0 15px;
+    padding: 0;
+    list-style-type: '-';
+    gap: 5px;
     &-item {
       padding-left: 10px;
     }
@@ -215,95 +214,95 @@
   &__button {
     @include button();
     @include flexible(183px);
+    height: 43px;
     font-size: 13px;
     line-height: 1.2;
-    height: 43px;
     border-radius: 4px;
     @media screen and (max-width: 576px) {
       width: 100%;
       max-width: 400px;
     }
     &_order {
-      grid-area: button-order;
       @include buttonOrder();
+      grid-area: button-order;
       @media screen and (max-width: 576px) {
         align-self: flex-end;
       }
     }
     &_more {
       grid-area: button-more;
+      color: $color-text-btn-secondary;
       background-color: $color-bg-text-secondary;
       border: 1px solid $color-border-btn;
-      color: $color-text-btn-secondary;
     }
   }
 }
 
 .order {
   @include gridable(100%);
-  background: url('./images/background-order.png') top no-repeat;
-  background-size: cover;
   justify-items: center;
   max-width: 1920px;
   padding: 121px 0 151px;
   color: $color-bg-text-secondary;
+  background: url('./images/background-order.png') top no-repeat;
+  background-size: cover;
   &__container {
     @include container(stretch);
-    justify-items: center;
     @include gridable(100%);
+    justify-items: center;
   }
   &__title {
     @include title();
+    margin-bottom: 30px;
     font-weight: 800;
     font-size: 36px;
     line-height: 1.2;
-    color: $color-bg-text-secondary;
-    margin-bottom: 30px;
     text-align: center;
+    color: $color-bg-text-secondary;
     &-decorate {
       color: $color-bg-text-decorate;
     }
   }
   &__subtitle {
-    color: $color-text-subtitle;
     margin: 0;
     font-size: 18px;
     line-height: 1.2;
     text-align: center;
+    color: $color-text-subtitle;
   }
   &__scheme {
-    margin: 0;
-    padding: 0;
     @include flexible(100%);
-    flex-flow: row nowrap;
     justify-content: space-between;
-    gap: 30px 20px;
+    flex-flow: row nowrap;
+    margin: 0;
     margin: 80px 0;
+    padding: 0;
+    gap: 30px 20px;
     @media screen and (max-width: 1150px) {
       justify-content: center;
       flex-wrap: wrap;
     }
 
     &-item {
-      position: relative;
-      height: 164px;
       @include gridable(209px);
+      position: relative;
       grid-template-rows: min-content 1fr;
-      gap: 20px;
       justify-items: center;
-      line-height: 1.2;
+      height: 164px;
       font-size: 16px;
+      line-height: 1.2;
+      gap: 20px;
       &::before {
         content: '•••••';
-        font-size: 13px;
-        letter-spacing: 18px;
-        color: $color-marker-order;
+        position: absolute;
         position: absolute;
         top: 42px;
-        position: absolute;
         right: 0;
         width: 50%;
         height: 6px;
+        font-size: 13px;
+        color: $color-marker-order;
+        letter-spacing: 18px;
         transform: translateX(63%);
         @media screen and (max-width: 1150px) {
           display: none;
@@ -315,9 +314,9 @@
     }
     &-subtitle {
       margin: 0;
-      text-align: center;
       font-size: 16px;
       line-height: 1.2;
+      text-align: center;
     }
   }
   &__icon {
@@ -328,24 +327,24 @@
 
 .form {
   @include gridable(100%);
-  gap: 55px;
   justify-items: center;
+  gap: 55px;
   &__fieldset {
     @include gridable(100%);
-    justify-content: stretch;
-    gap: 30px;
-    margin: 0;
-    padding: 0;
-    border: none;
     grid-template-areas:
       'select-system input-email input-name'
       'label-range label-range label-file';
+    justify-content: stretch;
+    margin: 0;
+    padding: 0;
+    border: none;
+    gap: 30px;
     @media screen and (max-width: 1024px) {
-      max-width: 800px;
       grid-template-areas:
         'input-email input-name'
         'label-range label-range'
         'select-system label-file';
+      max-width: 800px;
     }
 
     @media screen and (max-width: 576px) {
@@ -358,23 +357,23 @@
     }
   }
   &__select {
-    appearance: none;
     @include formElement();
     @include gridable(100%);
     grid-area: select-system;
-    padding-left: 10px;
     padding-right: 10px;
+    padding-left: 10px;
     background-image: url(./images/arrow-down.png);
     background-repeat: no-repeat;
     background-position: calc(100% - 10px) center;
+    appearance: none;
     &:focus {
       @include focus();
       background-image: url(./images/arrow-up.png);
     }
     &-option {
-      background-color: $color-bg-text-order;
-      line-height: 1.88;
       padding: 10px 0;
+      line-height: 1.88;
+      background-color: $color-bg-text-order;
 
       &:checked {
         color: $color-text-logo-decorate;
@@ -400,14 +399,14 @@
       grid-area: input-name;
     }
     &_range {
-      appearance: none;
       grid-area: input-range;
       max-width: none;
       height: 6px;
+      padding: 0;
       background-color: rgba($color-bg-text-secondary, 0.7);
       border: 1px solid $color-bg-text-secondary;
-      padding: 0;
       cursor: pointer;
+      appearance: none;
       &:focus {
         background-color: rgba($color-bg-text-secondary, 0.7);
         border: 1px solid $color-bg-text-secondary;
@@ -423,8 +422,8 @@
       }
     }
     &_file {
-      visibility: hidden;
       position: absolute;
+      visibility: hidden;
     }
   }
   &__label {
@@ -435,10 +434,10 @@
     }
     &_range {
       grid-area: label-range;
-      justify-content: space-between;
       grid-template-areas:
         'label-text label-value'
         'input-range input-range';
+      justify-content: space-between;
     }
     &-text-range {
       grid-area: label-text;
@@ -448,58 +447,58 @@
     }
     &_file {
       @include button();
-      border-radius: 3px;
-      font-size: 15px;
       position: relative;
-      background-color: $color-bg-text-secondary;
-      color: $color-bg-text-order;
-      border: 2px solid $color-bg-text-decorate;
       grid-area: label-file;
+      font-size: 15px;
+      color: $color-bg-text-order;
+      background-color: $color-bg-text-secondary;
+      border: 2px solid $color-bg-text-decorate;
+      border-radius: 3px;
     }
     &-text-file {
       @include flexible(100%);
-      align-items: center;
-      justify-content: center;
       position: absolute;
-      gap: 10px;
+      justify-content: center;
+      align-items: center;
       box-sizing: border-box;
+      gap: 10px;
     }
   }
   &__icon {
-    fill: $color-bg-text-order;
     width: 17px;
     height: 21px;
+    fill: $color-bg-text-order;
   }
   &__send-button {
     @include button();
     @include buttonOrder();
     @include flexible(100%);
+    max-width: $form-input-width;
     height: 48px;
     border-radius: 4px;
-    max-width: $form-input-width;
   }
 }
 
 .footer {
-  background-color: $color-bg-footer;
-  min-height: 80px;
   height: 100%;
+  min-height: 80px;
+  background-color: $color-bg-footer;
   &__container {
-    font-size: 13px;
     @include container(space-between);
     @include gridable(100%);
-    grid-template-columns: 1fr minmax(347px, 476px) 1fr;
     grid-template-areas: 'copyright payment contacts';
+    grid-template-columns: 1fr minmax(347px, 476px) 1fr;
+    font-size: 13px;
     @media screen and (max-width: 1210px) {
-      padding: 30px 10px;
-      gap: 20px;
-      justify-content: center;
-      justify-items: center;
-      grid-template-columns: 1fr;
       grid-template-areas:
         'contacts'
         'payment'
         'copyright';
+      grid-template-columns: 1fr;
+      justify-content: center;
+      justify-items: center;
+      padding: 30px 10px;
+      gap: 20px;
     }
     @media screen and (max-width: 576px) {
       font-size: 10px;
@@ -507,19 +506,19 @@
   }
   &__copyright {
     grid-area: copyright;
-    padding: 0;
     margin: 0;
+    padding: 0;
     color: $color-bg-text-secondary;
     white-space: nowrap;
   }
   &__payment {
-    grid-area: payment;
-    color: $color-text-footer;
-    justify-content: space-between;
     @include unmarkedList(0, 0);
     @include gridable(100%);
-    grid-template-columns: repeat(5, min-content);
     @include footerGap();
+    grid-area: payment;
+    grid-template-columns: repeat(5, min-content);
+    justify-content: space-between;
+    color: $color-text-footer;
     @media screen and (max-width: 1210px) {
       grid-template-columns: repeat(3, min-content);
       justify-content: center;
@@ -536,8 +535,8 @@
       }
     }
     &-item {
-      justify-content: center;
       @include flexible(100%);
+      justify-content: center;
       align-items: center;
       gap: 10px;
     }
@@ -547,10 +546,10 @@
     }
   }
   &__contacts {
-    grid-area: contacts;
     @include unmarkedList(0, 0);
     @include gridable(100%);
     @include footerGap();
+    grid-area: contacts;
     grid-template-columns: 1fr min-content;
     @media screen and (max-width: 1210px) {
       grid-template-columns: repeat(2, min-content);
@@ -580,22 +579,22 @@
     top: 0;
     right: -150%;
     display: block;
-    visibility: hidden;
     width: 100%;
     height: 100vh;
-    transition: 0.5s;
-    opacity: 0;
     background: $color-bg-header;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
     &_active {
       left: 0;
 
       visibility: visible;
 
       cursor: pointer;
-      -webkit-transition: 0.5s;
-      transition: 0.5s;
 
       opacity: 0.6;
+      -webkit-transition: 0.5s;
+      transition: 0.5s;
     }
   }
 }
@@ -608,12 +607,12 @@
   &:before,
   &:after,
   & &__line {
+    content: '';
     display: block;
     height: 2px;
-    content: '';
-    transition: 0.5s;
-    border-radius: 2px;
     background: $color-bg-text-secondary;
+    border-radius: 2px;
+    transition: 0.5s;
   }
   &_active {
     &:before {
