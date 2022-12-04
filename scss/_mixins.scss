@@ -9,16 +9,16 @@
 }
 
 @mixin unmarkedList($padding, $margin) {
-  list-style-type: none;
-  padding: $padding;
   margin: $margin;
+  padding: $padding;
+  list-style-type: none;
 }
 
 @mixin link($color) {
   color: $color;
-  cursor: pointer;
-  white-space: nowrap;
   text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
   opacity: 1;
   transition: opacity 0.5s ease;
   &:hover {
@@ -27,11 +27,11 @@
 }
 
 @mixin button() {
-  text-transform: uppercase;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   box-sizing: border-box;
   padding: 0;
+  text-transform: uppercase;
   cursor: pointer;
   transition: opacity 0.5s ease;
   &:hover {
@@ -39,25 +39,25 @@
   }
 }
 @mixin buttonOrder {
+  color: #fff;
   background-color: #3e9cdc;
   border: 1px solid #fff;
-  color: #fff;
 }
 
 @mixin container($justify-content) {
-  padding: 0 20px;
-  box-sizing: border-box;
-  max-width: calc($max-width + 40px);
   justify-content: $justify-content;
   align-items: center;
+  box-sizing: border-box;
+  max-width: calc($max-width + 40px);
+  padding: 0 20px;
 }
 
 @mixin title {
-  line-height: 1.2;
-  padding: 0;
   margin: 0;
-  text-transform: uppercase;
+  padding: 0;
+  line-height: 1.2;
   color: $color-text-primary;
+  text-transform: uppercase;
 }
 
 @mixin backgroundImgHeight {
@@ -68,33 +68,33 @@
 }
 
 @mixin formElement {
-  height: 48px;
   box-sizing: border-box;
-  background-color: rgba($color-bg-text-secondary, 0.85);
-  color: $color-bg-text-order;
-  border: 1px solid $color-bg-text-secondary;
-  line-height: 1.2;
+  width: 100%;
+  height: 48px;
   font-size: 18px;
+  line-height: 1.2;
+  color: $color-bg-text-order;
+  background-color: rgba($color-bg-text-secondary, 0.85);
+  border: 1px solid $color-bg-text-secondary;
   border-radius: 3px;
   outline: none;
-  width: 100%;
 }
 
 @mixin focus() {
+  color: $color-bg-text-secondary;
   background-color: $form-bg-select;
   border-color: $form-bg-select;
-  color: $color-bg-text-secondary;
 }
 
 @mixin thumb() {
-  appearance: none;
-  height: 24px;
+  box-sizing: border-box;
   width: 24px;
-  border-radius: 50%;
+  height: 24px;
   background-color: $color-text-logo-decorate;
   border: 3px solid $color-border-thumb;
+  border-radius: 50%;
   transition: transform 0.3s ease-in-out;
-  box-sizing: border-box;
+  appearance: none;
   &:hover {
     transform: scale(1.07);
   }
