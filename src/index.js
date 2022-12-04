@@ -10,6 +10,9 @@ const menu = document.querySelector('.header__menu');
 const menuButton = document.querySelector('.header__menu-button');
 const menuOverlay = document.querySelector('.overlay');
 const cross = menuButton.querySelector('.cross');
+const labelRangeValue = document.querySelector('.form__label-value');
+const inputRangeValue = document.querySelector('.form__input_range');
+
 const toggleMenuButton = () => {
   menu.classList.toggle('header__menu_opened');
   document.body.classList.toggle('scroll-lock');
@@ -27,6 +30,11 @@ const closeMenu = (e) => {
   }
 };
 
+function setInputLabelValue() {
+  labelRangeValue.textContent = `${inputRangeValue.value}%`;
+}
+
 menuButton.addEventListener('click', toggleMenuButton);
 menu.addEventListener('click', closeMenu);
 menuOverlay.addEventListener('click', closeMenu);
+inputRangeValue.addEventListener('input', setInputLabelValue);
