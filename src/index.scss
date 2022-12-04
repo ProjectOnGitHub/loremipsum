@@ -9,6 +9,7 @@
   height: 100%;
   font-weight: 400;
   font-family: 'Lato', Arial, sans-serif;
+  line-height: 1.2;
   font-style: normal;
 }
 
@@ -42,7 +43,6 @@
     @include link($color-bg-text-secondary);
     font-weight: 800;
     font-size: 28px;
-    line-height: 1.18;
     font-family: 'Raleway', Arial, sans-serif;
     font-style: normal;
     @media screen and (max-width: 576px) {
@@ -58,7 +58,6 @@
     flex-flow: row nowrap;
     font-weight: 600;
     font-size: 13px;
-    line-height: 1.2;
     gap: 60px;
     @media screen and (max-width: 1024px) {
       gap: 40px;
@@ -141,7 +140,6 @@
     grid-template-rows: repeat(4, min-content);
     padding-top: calc($header-height + 103px);
     font-size: 20px;
-    line-height: 1.2;
     column-gap: 30px;
     gap: 80px 30px;
     @media screen and (max-width: 1024px) {
@@ -216,7 +214,6 @@
     @include flexible(183px);
     height: 43px;
     font-size: 13px;
-    line-height: 1.2;
     border-radius: 4px;
     @media screen and (max-width: 576px) {
       width: 100%;
@@ -256,7 +253,6 @@
     margin-bottom: 30px;
     font-weight: 800;
     font-size: 36px;
-    line-height: 1.2;
     text-align: center;
     color: $color-bg-text-secondary;
     &-decorate {
@@ -266,7 +262,6 @@
   &__subtitle {
     margin: 0;
     font-size: 18px;
-    line-height: 1.2;
     text-align: center;
     color: $color-text-subtitle;
   }
@@ -290,7 +285,6 @@
       justify-items: center;
       height: 164px;
       font-size: 16px;
-      line-height: 1.2;
       gap: 20px;
       &::before {
         content: '•••••';
@@ -315,7 +309,6 @@
     &-subtitle {
       margin: 0;
       font-size: 16px;
-      line-height: 1.2;
       text-align: center;
     }
   }
